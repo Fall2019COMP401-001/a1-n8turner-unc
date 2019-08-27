@@ -10,7 +10,7 @@ public class A1Novice {
 		String output="";
 		System.out.println("How many customers are there?");
 		int customers = scan.nextInt();
-		
+		//iterates through customers
 		for (int i = 0; i<customers; i++) {
 			System.out.println("What is the customer's first, last name, and the number of items they are purchasing?");
 			String firstName = scan.next();
