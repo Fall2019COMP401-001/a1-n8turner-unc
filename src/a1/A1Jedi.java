@@ -34,9 +34,11 @@ public class A1Jedi {
 			for(int j = 0; j < numItems; j++) {		//associates customer items through names
 				int numBought = scan.nextInt();
 				naming = scan.next();
+				if(naming.equals(itemNames[j])) {
+					numCustomers[j]++;
+				}
 				for (int k = 0; k < itemNames.length; k++) {  //counts item amounts
 					if(naming.equals(itemNames[k])) {
-						numCustomers[k]++;
 						for (int l = 0; l < numBought; l++) {
 							itemAmounts[k]++;
 						}
