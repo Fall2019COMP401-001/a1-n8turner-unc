@@ -37,7 +37,7 @@ public class A1Jedi {
 						for (int l = 0; l < numBought; l++) {
 							itemAmounts[k]++;
 						}
-						if(numCustomers[k]<i) { //eliminates counting the same customer twice
+						if(numCustomers[k]-1<i) { //eliminates counting the same customer twice  
 							numCustomers[k]++;
 						}
 					}
