@@ -81,8 +81,8 @@ public class A1Adept {
 			average+=bills[i];
 		}
 		average /= bills.length;
-		System.out.println("Biggest: " + firstNames[highest] + " " + lastNames[highest] + " (" + bills[highest] + ")");
-		System.out.println("Smallest: " + firstNames[lowest] + " " + lastNames[lowest] + " (" + bills[lowest] + ")");
-		System.out.println("Average: " + average);
+		System.out.println("Biggest: " + firstNames[highest] + " " + lastNames[highest] + " (" + String.format("%.2f", bills[highest]) + ")");
+		System.out.println("Smallest: " + firstNames[lowest] + " " + lastNames[lowest] + " (" + String.format("%.2f", bills[lowest]) + ")");
+		System.out.println("Average: " + String.format("%.2f", average));
 	}
 }
