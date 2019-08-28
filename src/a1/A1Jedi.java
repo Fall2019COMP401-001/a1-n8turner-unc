@@ -11,10 +11,12 @@ public class A1Jedi {
 		int count = scan.nextInt();
 		double[] prices = new double[count];
 		String[] itemNames = new String[count];
+		boolean[] boughtYet = new boolean[count];
 		
 		for(int i = 0; i < count; i++) { // collects item data
 			itemNames[i] = scan.next();
 			prices[i] = scan.nextDouble(); 
+			boughtYet[i] = false;
 		}
 		
 		int customers = scan.nextInt();
@@ -36,12 +38,16 @@ public class A1Jedi {
 					if(naming.equals(itemNames[k])) {
 						for (int l = 0; l < numBought; l++) {
 							itemAmounts[k]++;
-						}
-						if(numCustomers[k]-1<i) { //eliminates counting the same customer twice  
-							numCustomers[k]++;
+							if(numCustomers[k]<i+1 && !boughtYet[k]) {  //denies double count of repeat customers
+								numCustomers[k]++;
+								boughtYet[k] = true;
+							}
 						}
 					}
 				}
+			}
+			for(int j = 0; j < boughtYet.length; j++) {   //resets status of item for next customer
+				boughtYet[j] = false;
 			}
 		}
 		
