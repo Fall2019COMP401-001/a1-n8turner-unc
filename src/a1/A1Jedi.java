@@ -18,16 +18,14 @@ public class A1Jedi {
 		}
 		
 		int customers = scan.nextInt();
-		int multiplier = 0;
 		String naming = "";
 		int numItems = 0;
-		int index = 0;
 		String[] firstNames = new String[customers];
 		String[] lastNames = new String[customers];
 		int[] itemAmounts = new int[count];
 		int[] numCustomers = new int[count];
+		
 		for (int i = 0; i < customers; i++) { //collects inputs for each customer
-			double bill = 0.0;
 			firstNames[i] = scan.next();
 			lastNames[i] = scan.next();
 			numItems = scan.nextInt();
@@ -36,9 +34,11 @@ public class A1Jedi {
 				naming = scan.next();
 				for (int k = 0; k < itemNames.length; k++) {  //counts item amounts
 					if(naming.equals(itemNames[k])) {
-						numCustomers[k]++;
 						for (int l = 0; l < numBought; l++) {
 							itemAmounts[k]++;
+						}
+						if(numCustomers[k]<i+1) { //eliminates counting the same customer twice
+							numCustomers[k]++;
 						}
 					}
 				}
